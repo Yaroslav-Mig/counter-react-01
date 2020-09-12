@@ -1,10 +1,5 @@
 import React from 'react';
-// import { PropsType } from './counter';
-
-type PropsType = {
-  number: number;
-  maxValue: number;
-};
+import { PropsType } from './counter';
 
 export function Display(props: PropsType) {
   return (

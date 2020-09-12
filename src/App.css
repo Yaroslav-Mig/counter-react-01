@@ -32,10 +32,11 @@
   color: rgb(255, 102, 0);
 }
 .btn {
+  width: 100px;
   padding: 10px;
   border: 2px solid #fff;
   outline: none;
   border-radius: 20px;
-	font-size: 20px;
-	cursor: pointer;
+  font-size: 20px;
+  cursor: pointer;
 }

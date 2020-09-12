@@ -4,14 +4,15 @@ import { Remote } from './buttons';
 
 export type PropsType = {
   number: number;
-  addNumber: () => void;
-  resetCounter: () => void;
+  addNumber?: () => void;
+  resetCounter?: () => void;
+  maxValue?: number;
+  minValue?: number;
 };
 
 export function Counter(props: PropsType) {
   const maxValue = 5;
   const minValue = 0;
-
   return (
     <div className='box-counter'>
       <Display number={props.number} maxValue={maxValue} />
