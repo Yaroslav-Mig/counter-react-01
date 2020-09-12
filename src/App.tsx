@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+// import { Display } from './components/display';
+import { Counter } from './components/counter';
 
 function App() {
+  let [number, setNumber] = useState<number>(0);
+
+  const increase = (): void => setNumber(number + 1);
+  const reset = (): void => setNumber(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='wrapper'>
+      <Counter number={number} addNumber={increase} resetCounter={reset} />
     </div>
   );
 }
