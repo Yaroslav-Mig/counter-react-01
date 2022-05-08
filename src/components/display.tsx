@@ -1,10 +1,13 @@
-import React from 'react';
-import { PropsType } from './counter';
+import React, { FC } from 'react';
+import { CounterProps } from './counter';
 
-export function Display(props: PropsType) {
-  return (
-    <div className={props.number === props.maxValue ? 'number number-max' : 'number'}>
-      {props.number}
-    </div>
-  );
-}
+type DisplayProps = Omit<CounterProps, 'addNumber' | 'resetCounter'> & {
+  maxValue: number;
+};
+
+export const Display: FC<DisplayProps> = (props) => {
+	const { number, maxValue } = props;
+	const classNumber = number < maxValue ? 'number' : 'number number-max';
+
+  return <div className={classNumber}>{props.number}</div>;
+};

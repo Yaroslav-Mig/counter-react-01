@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Display } from './display';
-import { Remote } from './buttons';
+import { Remote } from './remote';
 
-export type PropsType = {
+export type CounterProps = {
   number: number;
-  addNumber?: () => void;
-  resetCounter?: () => void;
-  maxValue?: number;
-  minValue?: number;
+  addNumber: () => void;
+  resetCounter: () => void;
 };
 
-export function Counter(props: PropsType) {
-  const maxValue = 5;
-  const minValue = 0;
-  return (
-    <div className='box-counter'>
-      <Display number={props.number} maxValue={maxValue} />
-      <Remote
-        number={props.number}
-        maxValue={maxValue}
-        minValue={minValue}
-        addNumber={props.addNumber}
-        resetCounter={props.resetCounter}
-      />
-    </div>
-  );
+export const Counter: FC<CounterProps> = (props) => {
+	const { number, addNumber, resetCounter } = props;
+	const maxValue = 5;
+	const minValue = 0;
+	return (
+		<div className='box-counter'>
+			<Display number={number} maxValue={maxValue} />
+			<Remote
+				number={number}
+				maxValue={maxValue}
+				minValue={minValue}
+				addNumber={addNumber}
+				resetCounter={resetCounter} />
+		</div>
+	);
 }
+
