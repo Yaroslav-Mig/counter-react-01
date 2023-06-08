@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import Counter from './components/Counter';
 import './App.css';
-import { Counter } from './components/counter';
 
 const App = (): JSX.Element => {
   let [number, setNumber] = useState<number>(0);
 
-  const increase = (): void => setNumber(number + 1);
+  const increase = (): void => setNumber((prev) => prev + 1);
   const reset = (): void => setNumber(0);
 
   return (
