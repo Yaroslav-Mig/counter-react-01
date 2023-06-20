@@ -1,4 +1,8 @@
 .inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1 0 fit-content;
   width: 100%;
   text-align: center;
   font-size: 4rem;

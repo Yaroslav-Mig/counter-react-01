@@ -15,14 +15,14 @@ const CounterControl = (props: CounterRemoteProps): JSX.Element => {
   const disabledMin = number <= minValue;
 
   return (
-    <form className='btn-inner'>
+    <div className='btn-inner'>
       <Button variant='secondary' outerClass='btn' disabled={disabledMax} onClick={addNumber}>
         Increase
       </Button>
       <Button variant='secondary' outerClass='btn' disabled={disabledMin} onClick={resetCounter}>
         Reset
       </Button>
-    </form>
+    </div>
   );
 };
 
