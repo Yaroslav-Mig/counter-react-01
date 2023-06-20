@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Display from './display/Display';
-import Remote from './remote/Remote';
+import CounterDisplay from './display/Display';
+import CounterControl from './control/Control';
 
 export type CounterProps = {
   number: number;
@@ -16,9 +16,9 @@ const Counter = (props: CounterProps): JSX.Element => {
   const minValue = 0;
 
   return (
-    <div className='box-counter'>
-      <Display number={number} maxValue={maxValue} />
-      <Remote
+    <div className='box'>
+      <CounterDisplay number={number} maxValue={maxValue} />
+      <CounterControl
         number={number}
         maxValue={maxValue}
         minValue={minValue}

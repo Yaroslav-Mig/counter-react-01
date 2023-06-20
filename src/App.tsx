@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import Counter from './components/Counter';
+
+import Counter from './components/counter/Counter';
+import Setting from './components/setting/Setting';
+
 import './App.css';
 
 const App = (): JSX.Element => {
@@ -10,6 +13,7 @@ const App = (): JSX.Element => {
 
   return (
     <div className='wrapper'>
+      <Setting />
       <Counter number={number} addNumber={increase} resetCounter={reset} />
     </div>
   );
