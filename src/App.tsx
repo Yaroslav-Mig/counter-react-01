@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Counter from './components/counter/Counter';
 import Setting from './components/setting/Setting';
+import CounterProvider from './hoc/counter_provider/CounterProvider';
 
 import './App.css';
 
@@ -12,10 +13,12 @@ const App = (): JSX.Element => {
   const reset = (): void => setNumber(0);
 
   return (
-    <div className='wrapper'>
-      <Setting />
-      <Counter number={number} addNumber={increase} resetCounter={reset} />
-    </div>
+    <CounterProvider>
+      <div className='wrapper'>
+        <Setting />
+        <Counter number={number} addNumber={increase} resetCounter={reset} />
+      </div>
+    </CounterProvider>
   );
 };
 
