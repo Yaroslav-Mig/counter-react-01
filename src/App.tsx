@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Counter from './components/counter/Counter';
 import Setting from './components/setting/Setting';
-import CounterProvider from './hoc/counter_provider/CounterProvider';
+import CounterProvider from './hoc/CounterProvider';
 
 import './App.css';
 

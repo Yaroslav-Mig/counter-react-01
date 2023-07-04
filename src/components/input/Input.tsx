@@ -27,9 +27,9 @@ const {
 } = css;
 
 const Input: React.FC<SuperInputProps> = (props) => {
-  const { id, type: t, label, error, isValid, children, onChange, ...attrs } = props;
+  const { id, type: t, label, error, isValid, children, outerClass, onChange, ...attrs } = props;
 
-  const classInput = clsx(input, attrs.outerClass, {
+  const classInput = clsx(input, outerClass, {
     [input_error]: error,
   });
   const isType = t === 'color' || t === 'radio' || t === 'checkbox' || t === 'range';
